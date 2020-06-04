@@ -22,12 +22,7 @@
       </div>
       <div class="hr"></div>
       <div class="foot-lnk">
-        <label for="tab-1">Already Member?</a>
+        <a href="#" for="tab-1">Already Member?</a>
       </div>
     </div><!-- formulario sign-up - fim -->
 </template>
-
-<script>
-export default {
-}
-</script>

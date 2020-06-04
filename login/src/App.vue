@@ -4,15 +4,11 @@
 
  export default {
    components: {
-
      VedAuth
-
    }
  }
 </script>
 
 <template>
-
   <ved-auth/>
-
 </template>
