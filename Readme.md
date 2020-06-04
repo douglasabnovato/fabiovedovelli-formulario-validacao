@@ -1,7 +1,8 @@
 Formulário Login 
 
-- [ ] Login Form do [Codepen](https://codepen.io/khadkamhn/pen/ZGvPLo?q=login+form&limit=all&type=type-pens) com CSS e HTML
-- [ ] Implementar em Vuejs
+- [x] Login Form do [Codepen](https://codepen.io/khadkamhn/pen/ZGvPLo?q=login+form&limit=all&type=type-pens) com CSS e HTML
+- [x] Implementar em Vuejs: componentizar
+- [ ] Tratar as validações
 
 #### Comentários no decorrer da implementação
 1. executa`npx vue-cli init webpack-simple login`
