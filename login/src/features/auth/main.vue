@@ -6,6 +6,13 @@
     components: {
       SignIn,
       SignUp
+    },
+    methods: {
+      doSignIn (obj) {
+        //fingir que há uma chamada AJAX
+        obj.username = 'douglasabnovato'
+        window.console.log(obj);
+      }
     }
   }
 </script>
@@ -22,7 +29,7 @@
 
         <!-- formulario Login -->
         <div class="login-form">
-          <sign-in/>
+          <sign-in @do-sign-in="doSignIn"/>
           <sign-up/>
 		    </div><!-- formulario Login - fim -->
 

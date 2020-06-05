@@ -9,7 +9,7 @@
     },
     methods: {
       submit () {
-        window.console.log(JSON.stringify(this.$data));
+        this.$emit('do-sign-in', {...this.$data})
       }
     }
   }
