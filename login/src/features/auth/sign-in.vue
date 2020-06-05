@@ -1,6 +1,15 @@
 <script>
   export default {
-    data() {
+    mounted (){
+      this.$bus.$on('navigate', selected => {
+        if(selected === 'signup'){
+          this.username = ''
+          this.password = ''
+          this.keepSignedIn = true
+        }
+      })
+    },
+    data () {
       return {
         username: '',
         password: '',

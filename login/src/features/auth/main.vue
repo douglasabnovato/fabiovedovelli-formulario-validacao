@@ -14,7 +14,7 @@
     },
     methods: {
       navigate () {
-        this.$emit('navigate', this.navigation)
+        this.$bus.$emit('navigate', this.navigation)
       },
       doSignIn (obj) {
         //fingir que há uma chamada AJAX

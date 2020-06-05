@@ -1,3 +1,16 @@
+<script>
+  export default {
+    mounted (){
+      this.$bus.$on('navigate', obj => {
+        window.console.log({
+          onde: 'signup',
+          obj
+        })
+      })
+    }
+  }
+</script>
+
 <template>
     <!-- formulario sign-up -->
     <div class="sign-up-htm">
