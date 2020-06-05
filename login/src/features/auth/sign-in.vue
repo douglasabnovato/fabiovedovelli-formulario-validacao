@@ -1,7 +1,14 @@
 <script>
+  import { required } from 'vuelidate/lib/validators'
+
   export default {
     mounted (){
       this.$bus.$on('navigate', this.reset)
+    },
+    validations: {
+      username: {
+        required
+      }
     },
     data () {
       return {
