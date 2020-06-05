@@ -8,6 +8,9 @@
     validations: {
       username: {
         required
+      },
+      password: {
+        required
       }
     },
     data () {
@@ -19,7 +22,9 @@
     },
     methods: {
       submit () {
-        this.$emit('do-sign-in', {...this.$data})
+        if(this.isValid){
+          this.$emit('do-sign-in', {...this.$data})
+        }
       },
       reset (selected) {
         if(selected === 'signup'){
@@ -27,6 +32,11 @@
           this.password = ''
           this.keepSignedIn = true
         }
+      }
+    },
+    computed: {
+      isValid () {
+        return !this.$v.username.$invalid && !this.$v.password.$invalid
       }
     }
   }
@@ -37,13 +47,13 @@
     <form action="#" @submit.prevent="submit" class="sign-in-htm">
 
       <div class="group">
-        <label for="sign-in-user" class="label">Username</label>
-        <input id="sign-in-user" type="text" class="input" v-model="username">
+        <label for="sign-in-user" class="label invalid">Username</label>
+        <input id="sign-in-user" type="text" class="input invalid" v-model="username">
       </div>
 
       <div class="group">
-        <label for="sign-in-pass" class="label">Password</label>
-        <input id="sign-in-pass" type="password" class="input" data-type="password" v-model="password">
+        <label for="sign-in-pass" class="label invalid">Password</label>
+        <input id="sign-in-pass" type="password" class="input invalid" data-type="password" v-model="password">
       </div>
 
       <div class="group">
