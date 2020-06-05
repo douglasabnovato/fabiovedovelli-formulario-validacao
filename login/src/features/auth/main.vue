@@ -10,8 +10,6 @@
     methods: {
       doSignIn (obj) {
         //fingir que há uma chamada AJAX
-        obj.username = 'douglasabnovato'
-        window.console.log(obj);
       }
     }
   }
