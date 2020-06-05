@@ -1,14 +1,13 @@
 <script>
   import SignIn from './sign-in'
   import SignUp from './sign-up'
-
   export default {
     components: {
       SignIn,
       SignUp
     },
-    data (){
-      return{
+    data () {
+      return {
         navigation: 'signin'
       }
     },
@@ -17,7 +16,12 @@
         this.$bus.$emit('navigate', this.navigation)
       },
       doSignIn (obj) {
-        //fingir que há uma chamada AJAX
+        // fingir que há uma chamada AJAX
+        window.console.log(obj)
+      },
+      doSignUp (obj) {
+        // fingir que há uma chamada AJAX
+        window.console.log(obj)
       }
     }
   }
@@ -38,7 +42,7 @@
           @change="navigate"
           name="tab"
           class="sign-in"
-          checked><label for="tab-1" class="tab"> Sign In </label>
+          checked><label for="tab-1" class="tab">Sign In</label>
 
         <input
           id="tab-2"
@@ -52,7 +56,7 @@
         <!-- formulario Login -->
         <div class="login-form">
           <sign-in @do-sign-in="doSignIn"/>
-          <sign-up/>
+          <sign-up @do-sign-up="doSignUp"/>
 		    </div><!-- formulario Login - fim -->
 
 	    </div><!-- Página Form - fim -->
