@@ -24,6 +24,8 @@
       submit () {
         if(this.isValid){
           this.$emit('do-sign-in', {...this.$data})
+        } else {
+          this.$v.$touch()
         }
       },
       reset (selected) {
@@ -31,6 +33,7 @@
           this.username = ''
           this.password = ''
           this.keepSignedIn = true
+          this.$v.$reset()
         }
       }
     },
