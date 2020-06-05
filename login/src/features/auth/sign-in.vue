@@ -1,6 +1,6 @@
 <template>
     <!-- formulario sign-in -->
-    <div class="sign-in-htm">
+    <form action="#" @submit.prevent="" class="sign-in-htm">
 
       <div class="group">
         <label for="sign-in-user" class="label">Username</label>
@@ -27,7 +27,7 @@
         <a href="#forgot">Forgot Password?</a>
       </div>
 
-    </div><!-- formulario sign-in - fim -->
+    </form><!-- formulario sign-in - fim -->
 
 </template>
 <script>
