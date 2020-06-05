@@ -1,6 +1,23 @@
+<script>
+  export default {
+    data() {
+      return {
+        username: '',
+        password: '',
+        keepSignedIn: true
+      }
+    },
+    methods: {
+      submit () {
+        window.console.log(JSON.stringify(this.$data));
+      }
+    }
+  }
+</script>
+
 <template>
     <!-- formulario sign-in -->
-    <form action="#" @submit.prevent="" class="sign-in-htm">
+    <form action="#" @submit.prevent="submit" class="sign-in-htm">
 
       <div class="group">
         <label for="sign-in-user" class="label">Username</label>
@@ -30,14 +47,3 @@
     </form><!-- formulario sign-in - fim -->
 
 </template>
-<script>
-export default {
-  data() {
-    return {
-      username: '',
-      password: '',
-      keepSignedIn: true
-    }
-  }
-}
-</script>
