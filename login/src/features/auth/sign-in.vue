@@ -1,13 +1,7 @@
 <script>
   export default {
     mounted (){
-      this.$bus.$on('navigate', selected => {
-        if(selected === 'signup'){
-          this.username = ''
-          this.password = ''
-          this.keepSignedIn = true
-        }
-      })
+      this.$bus.$on('navigate', this.reset)
     },
     data () {
       return {
@@ -19,6 +13,13 @@
     methods: {
       submit () {
         this.$emit('do-sign-in', {...this.$data})
+      },
+      reset (selected) {
+        if(selected === 'signup'){
+          this.username = ''
+          this.password = ''
+          this.keepSignedIn = true
+        }
       }
     }
   }
