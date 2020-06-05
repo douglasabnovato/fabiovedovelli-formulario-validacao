@@ -47,13 +47,32 @@
     <form action="#" @submit.prevent="submit" class="sign-in-htm">
 
       <div class="group">
-        <label for="sign-in-user" class="label invalid">Username</label>
-        <input id="sign-in-user" type="text" class="input invalid" v-model="username">
+        <label
+          :class="{ invalid: $v.username.$dirty && $v.username.$invalid }"
+          for="sign-in-user"
+          class="label">Username</label>
+        <input
+          :class="{ invalid: $v.username.$dirty && $v.username.$invalid }"
+          id="sign-in-user"
+          type="text"
+          @input="$v.username.$touch()"
+          class="input"
+          v-model="username">
       </div>
 
       <div class="group">
-        <label for="sign-in-pass" class="label invalid">Password</label>
-        <input id="sign-in-pass" type="password" class="input invalid" data-type="password" v-model="password">
+        <label
+          :class="{ invalid: $v.password.$dirty && $v.password.$invalid }"
+          for="sign-in-pass"
+          class="label">Password</label>
+        <input
+          :class="{ invalid: $v.password.$dirty && $v.password.$invalid }"
+          id="sign-in-pass"
+          type="password"
+          @input="$v.password.$touch()"
+          class="input"
+          data-type="password"
+          v-model="password">
       </div>
 
       <div class="group">
